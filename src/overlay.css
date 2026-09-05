@@ -6,5 +6,5 @@
 @keyframes photo-drift { 0%,100% { transform:translate3d(0,0,0) rotate(8deg); } 50% { transform:translate3d(-18px,-22px,0) rotate(2deg); } }
 @media (max-width:700px) { .photo-overlay { width:118px; height:158px; right:2%; top:39%; } .photo-overlay span { bottom:-27px; left:-18px; } }
 @media (prefers-reduced-motion: reduce) { .photo-overlay { animation:none; } }
-@media (max-width:700px) { .contact-details { flex-direction:column; gap:14px; } .contact-details strong { display:block; margin:4px 0 0; } }
+@media (max-width:700px) { .contact-details { flex-direction:column; gap:14px; } .contact-details strong { display:block; margin:4px 0 0; } .about-image { margin-bottom:62px; } .about-image p { position:relative; right:auto; bottom:auto; margin:16px 0 0; padding-left:4px; font-size:16px; } .about-copy h2 { font-size:44px; line-height:1; letter-spacing:-1.8px; } .about-copy>p:not(.section-kicker) { margin-top:24px; } }
 
