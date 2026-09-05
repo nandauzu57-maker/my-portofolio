@@ -18,4 +18,4 @@
 .project-number, .view-project { z-index:2; }
 .view-project { padding:9px 12px; background:rgba(245,241,235,.88); }
 .project-video::-webkit-media-controls-panel { background:rgba(36,32,29,.78); }
-@media (max-width:700px) { .project-video { object-position:center; } }
+@media (max-width:700px) { .project-list { width:100%; } .project-visual { height:auto; min-height:0; aspect-ratio:16 / 9; } .project-video { object-position:center; } .project-meta h3 { overflow-wrap:anywhere; font-size:24px; } .project-description { max-width:none; } .project-tags { justify-content:flex-start; } .view-project { right:12px; bottom:12px; font-size:9px; } }
