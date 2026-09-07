@@ -3,6 +3,8 @@ import profileImg from './assets/nanda.jpg.jpeg'
 import karyaOne from './assets/karya-1.mp4'
 import karyaTwo from './assets/karya-2.mp4'
 import karyaThree from './assets/karya-3.mp4'
+import exempleVideo from './assets/xemple.mp4'
+import AsciiBackground from './components/ui/ascii-background'
 import { useEffect, useState } from 'react'
 import DancingLetters from './components/ui/dancing-letters'
 import './App.css'
@@ -14,6 +16,7 @@ const projects = [
   { number: '01', type: 'Clothing brand / Website', title: 'CLOTHING BRAND WEBSITE', description: 'A bold clothing brand website built around movement, identity and everyday expression.', tags: ['Branding', 'Fashion', 'Website'], className: 'project-luma', video: karyaOne },
   { number: '02', type: '16flames / Website', title: '16FLAMES WEBSITE', description: 'A visual website experience for 16flames, shaped by style, rhythm and attitude.', tags: ['Website', 'Visual', 'Direction'], className: 'project-sora', video: karyaTwo },
   { number: '03', type: 'Restaurant website / Digital experience', title: 'RESTAURANT WEBSITE', description: 'A warm digital experience for presenting a restaurant, its menu and its atmosphere.', tags: ['Website', 'UI/UX', 'Food'], className: 'project-hours', video: karyaThree },
+  { number: '04', type: 'Motion study / Video project', title: 'NEW VIDEO PROJECT', description: 'A new visual study added to the portfolio for exploring motion, rhythm and atmosphere.', tags: ['Motion', 'Video', 'Visual'], className: 'project-luma', video: exempleVideo },
 ]
 
 function ArrowIcon() { return <span className="arrow-icon" aria-hidden="true">↗</span> }
@@ -44,6 +47,7 @@ function App() {
 
   return (
     <main>
+      <AsciiBackground source={profileImg} />
       <div className={`page-loader ${isLoading ? 'is-loading' : ''}`} aria-hidden="true"><DancingLetters text="NANDA" autoPlay autoPlayInterval={900} className="loader-dancing-letters" letterClassName="loader-dancing-letter" /><small>loading experience</small></div>
       <div className="custom-cursor" aria-hidden="true" />
       <nav className="nav container"><a className="brand" href="#top" aria-label="Nanda home"><span>N</span>nanda.</a><div className="nav-links"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div><a className="nav-status" href="#contact"><i /> Available for work</a></nav>
