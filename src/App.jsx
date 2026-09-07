@@ -4,6 +4,7 @@ import karyaOne from './assets/karya-1.mp4'
 import karyaTwo from './assets/karya-2.mp4'
 import karyaThree from './assets/karya-3.mp4'
 import { useEffect, useState } from 'react'
+import DancingLetters from './components/ui/dancing-letters'
 import './App.css'
 import './overlay.css'
 import './projects.css'
@@ -21,7 +22,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const loaderTimer = window.setTimeout(() => setIsLoading(false), 900)
+    const loaderTimer = window.setTimeout(() => setIsLoading(false), 5000)
     const revealItems = document.querySelectorAll('[data-reveal]')
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -43,10 +44,10 @@ function App() {
 
   return (
     <main>
-      <div className={`page-loader ${isLoading ? 'is-loading' : ''}`} aria-hidden="true"><span>N</span><small>loading experience</small></div>
+      <div className={`page-loader ${isLoading ? 'is-loading' : ''}`} aria-hidden="true"><DancingLetters text="NANDA" autoPlay autoPlayInterval={900} className="loader-dancing-letters" letterClassName="loader-dancing-letter" /><small>loading experience</small></div>
       <div className="custom-cursor" aria-hidden="true" />
       <nav className="nav container"><a className="brand" href="#top" aria-label="Nanda home"><span>N</span>nanda.</a><div className="nav-links"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div><a className="nav-status" href="#contact"><i /> Available for work</a></nav>
-      <section className="hero-section container" id="top"><div className="hero-copy"><p className="eyebrow"><span>01</span> Independent web developer</p><h1>Ideas made<br /><em>alive.</em></h1><p className="hero-intro">I’m Nanda — a web developer building fast, expressive and memorable digital experiences.</p><div className="hero-actions"><a className="button button-dark" href="#work">Explore my work <ArrowIcon /></a><a className="text-link" href="#about">More about me <span>↓</span></a></div></div><div className="hero-scene" aria-label="Abstract 3D design object"><div className="scene-glow" /><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="photo-overlay"><img src={profileImg} alt="Portrait of Nanda" /><span>code<br /><strong>in progress</strong></span></div><div className="cube-wrap"><img src={heroImg} alt="Abstract 3D layered cube" /></div><div className="scene-label label-top">web<br /><strong>in motion</strong></div><div className="scene-label label-bottom">scroll to<br /><strong>explore ↓</strong></div><span className="scene-dot dot-one" /><span className="scene-dot dot-two" /></div><div className="hero-footer"><span>Based in Bandung, ID</span><span>Scroll to explore <b>↓</b></span><span>© 2025—2026</span></div></section>
+      <section className="hero-section container" id="top"><div className="hero-copy"><p className="eyebrow"><span>01</span> Independent web developer</p><h1>Ideas made<br /><DancingLetters text="alive." autoPlay autoPlayInterval={1800} className="dancing-letters-title" letterClassName="dancing-letters-letter" /></h1><p className="hero-intro">I’m Nanda — a web developer building fast, expressive and memorable digital experiences.</p><div className="hero-actions"><a className="button button-dark" href="#work">Explore my work <ArrowIcon /></a><a className="text-link" href="#about">More about me <span>↓</span></a></div></div><div className="hero-scene" aria-label="Abstract 3D design object"><div className="scene-glow" /><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="photo-overlay"><img src={profileImg} alt="Portrait of Nanda" /><span>code<br /><strong>in progress</strong></span></div><div className="cube-wrap"><img src={heroImg} alt="Abstract 3D layered cube" /></div><div className="scene-label label-top">web<br /><strong>in motion</strong></div><div className="scene-label label-bottom">scroll to<br /><strong>explore ↓</strong></div><span className="scene-dot dot-one" /><span className="scene-dot dot-two" /></div><div className="hero-footer"><span>Based in Bandung, ID</span><span>Scroll to explore <b>↓</b></span><span>© 2025—2026</span></div></section>
       <div className="marquee" aria-hidden="true"><div>WEB DEVELOPMENT <span>✦</span> INTERACTIVE EXPERIENCES <span>✦</span> WEB DEVELOPMENT <span>✦</span> INTERACTIVE EXPERIENCES <span>✦</span></div></div>
       <section className="statement container" data-reveal><p className="section-kicker">/ What I believe</p><h2>Good design is not just<br /><span>aesthetic. It is <em>felt.</em></span></h2><p className="statement-note">Creating with curiosity, intention and a little bit of magic.</p></section>
       <section className="work-section container" id="work" data-reveal><div className="section-heading"><div><p className="section-kicker">/ Selected work</p><h2>A few things<br /><em>I’ve made.</em></h2></div><p className="heading-side">Three moving studies exploring rhythm, atmosphere and visual storytelling.</p></div><div className="project-list">{projects.map((project) => <article className={`project ${project.className}`} key={project.number} data-reveal><div className="project-visual"><span className="project-number">{project.number}</span><video className="project-video" src={project.video} poster={heroImg} autoPlay muted loop playsInline controls preload="auto" onClick={(event) => event.currentTarget.play().catch(() => {})} aria-label={`Play ${project.title}`}><track kind="captions" /></video><span className="view-project">Play project <ArrowIcon /></span></div><div className="project-meta"><div><p className="project-type">{project.type}</p><h3>{project.title}</h3></div><p className="project-description">{project.description}</p><div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div></article>)}</div></section>
