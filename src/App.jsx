@@ -1,6 +1,6 @@
 import heroImg from './assets/hero.png'
 import profileImg from './assets/nanda.jpg.jpeg'
-import karyaOne from './assets/karya-1.mp4'
+import karyaOne from './assets/karya1.mp4'
 import karyaTwo from './assets/karya-2.mp4'
 import karyaThree from './assets/karya-3.mp4'
 import exempleVideo from './assets/xemple.mp4'
