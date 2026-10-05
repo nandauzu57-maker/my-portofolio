@@ -112,6 +112,88 @@ main {
   margin-top: 0;
 }
 
+.developer-illustration {
+  position: absolute;
+  top: 51%;
+  left: 47%;
+  z-index: 2;
+  width: min(420px, 92%);
+  transform: translate(-50%, -50%);
+  animation: developer-float 5.5s ease-in-out infinite;
+}
+
+.developer-illustration-art {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 18px 20px rgb(48 39 34 / 10%));
+}
+
+.developer-head {
+  transform-box: fill-box;
+  transform-origin: 50% 90%;
+  animation: developer-focus 4s ease-in-out infinite;
+}
+
+.developer-hands {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  animation: developer-type 1.1s ease-in-out infinite;
+}
+
+.developer-cursor {
+  animation: cursor-blink 1.2s steps(2, jump-none) infinite;
+}
+
+@keyframes developer-float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateY(-9px);
+  }
+}
+
+@keyframes developer-focus {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  45% {
+    transform: rotate(-2deg) translateY(1px);
+  }
+
+  60% {
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes developer-type {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: .15;
+  }
+}
+
 .section-heading h2,
 .statement h2,
 .about-copy h2,
@@ -192,6 +274,99 @@ main {
   border-radius: 2px;
 }
 
+.service-item,
+.process-grid article,
+.skill-card {
+  opacity: 0;
+  translate: 0 16px;
+  transition:
+    opacity .65s ease,
+    translate .65s cubic-bezier(.2, .7, .2, 1),
+    background-color .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.services-section.is-visible .service-item,
+.process-section.is-visible .process-grid article,
+.capabilities.is-visible .skill-card {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.services-section.is-visible .service-item:nth-child(2),
+.process-section.is-visible .process-grid article:nth-child(2),
+.capabilities.is-visible .skill-card:nth-child(2) {
+  transition-delay: .1s;
+}
+
+.services-section.is-visible .service-item:nth-child(3),
+.process-section.is-visible .process-grid article:nth-child(3),
+.capabilities.is-visible .skill-card:nth-child(3) {
+  transition-delay: .2s;
+}
+
+.process-section.is-visible .process-grid article:nth-child(4) {
+  transition-delay: .3s;
+}
+
+.service-item:hover,
+.process-grid article:hover {
+  translate: 0 -4px;
+}
+
+.process-grid article {
+  transition:
+    opacity .65s ease,
+    translate .65s cubic-bezier(.2, .7, .2, 1),
+    border-color .25s ease;
+}
+
+.process-grid article:hover {
+  border-color: var(--coral);
+}
+
+.project-video {
+  transition: transform .65s cubic-bezier(.2, .7, .2, 1);
+}
+
+.project-visual:hover .project-video {
+  transform: scale(1.025);
+}
+
+.portrait-placeholder img {
+  transition: transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+
+.portrait-placeholder:hover img {
+  transform: scale(1.035);
+}
+
+.service-cta .arrow-icon,
+.work-cta .arrow-icon,
+.contact-whatsapp .arrow-icon,
+.button-dark .arrow-icon {
+  display: inline-block;
+  transition: transform .25s ease;
+}
+
+.service-cta:hover .arrow-icon,
+.work-cta:hover .arrow-icon,
+.contact-whatsapp:hover .arrow-icon,
+.button-dark:hover .arrow-icon {
+  transform: translate(3px, -3px);
+}
+
+.skill-tags span {
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+}
+
+.skill-tags span:hover {
+  border-color: var(--coral);
+  background: rgb(242 107 79 / 8%);
+  color: var(--ink);
+}
+
 .about {
   grid-template-columns: 44% minmax(0, 1fr);
   gap: 7%;
@@ -263,6 +438,12 @@ a:focus-visible {
   .hero-section {
     min-height: 820px;
     padding-top: 60px;
+  }
+
+  .developer-illustration {
+    top: 51%;
+    left: 47%;
+    width: min(370px, 108%);
   }
 
   .hero-copy h1 {
@@ -349,5 +530,12 @@ a:focus-visible {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: .01ms !important;
+  }
+
+  .service-item,
+  .process-grid article,
+  .skill-card {
+    opacity: 1;
+    translate: none;
   }
 }

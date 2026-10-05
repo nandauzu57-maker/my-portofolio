@@ -26,6 +26,63 @@ const whatsappLink = 'https://wa.me/6285285335521?text=Hi%20Nanda%2C%20I%27d%20l
 
 function ArrowIcon() { return <span className="arrow-icon" aria-hidden="true">↗</span> }
 
+function DeveloperIllustration() {
+  return (
+    <svg className="developer-illustration-art" viewBox="0 0 420 360" role="img" aria-label="Animated illustration of a developer working at a laptop">
+      <defs>
+        <linearGradient id="developer-shirt" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stopColor="#f58268" />
+          <stop offset="1" stopColor="#d95648" />
+        </linearGradient>
+        <linearGradient id="developer-screen" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stopColor="#35304f" />
+          <stop offset="1" stopColor="#24211f" />
+        </linearGradient>
+        <linearGradient id="developer-laptop" x1="0" x2="1">
+          <stop offset="0" stopColor="#d4c8bb" />
+          <stop offset=".5" stopColor="#f4eee7" />
+          <stop offset="1" stopColor="#c4b8ad" />
+        </linearGradient>
+      </defs>
+      <ellipse cx="207" cy="322" rx="119" ry="16" fill="#8f8176" opacity=".16" />
+      <g fill="none" stroke="#a99c90" strokeLinecap="round" strokeWidth="7" opacity=".7">
+        <path d="M148 196v52c0 10 8 18 18 18h78c10 0 18-8 18-18v-52" />
+        <path d="M207 266v32m-38 0h76" />
+      </g>
+      <path d="M158 220c-6 37-3 58 4 83l-20 17c-5 5-1 12 6 12h55c7 0 11-5 8-11l-12-27 13-55z" fill="#45415f" />
+      <path d="M207 239c-1 33 6 48 23 64l-4 16c-2 7 2 13 9 13h47c8 0 11-8 5-14l-28-26-5-63z" fill="#514a70" />
+      <g className="developer-body">
+        <path d="M179 111h54l11 30-12 31 16 43c-26 21-71 21-98 0l18-44-12-31z" fill="url(#developer-shirt)" />
+        <path d="M192 104h30v28c-7 10-22 10-30 0z" fill="#d99a7d" />
+        <path d="M173 143c-12 2-21 12-25 27l-17 51c-2 7 3 13 10 13 5 0 8-3 10-8l26-48" fill="#dc9b7e" />
+        <path d="M239 143c12 2 21 12 25 27l17 51c2 7-3 13-10 13-5 0-8-3-10-8l-26-48" fill="#dc9b7e" />
+        <g className="developer-head">
+          <path d="M174 68c0-23 15-39 36-39 22 0 37 16 37 39v20c0 22-15 38-37 38-21 0-36-16-36-38z" fill="#e8ad8d" />
+          <path d="M171 76c-8-30 8-57 38-57 29 0 47 22 38 56l-7-9-7-22c-13 13-33 20-56 19l-2 20z" fill="#302b31" />
+          <path d="M178 52c10-18 28-25 48-18 8 3 14 8 18 15-17-5-36-4-54 4-5 2-9 4-13 7z" fill="#42343a" />
+          <path d="M187 81h5m25 0h5" fill="none" stroke="#55413b" strokeLinecap="round" strokeWidth="3" />
+          <path d="M204 98c4 3 9 3 13 0" fill="none" stroke="#a65e55" strokeLinecap="round" strokeWidth="2.5" />
+        </g>
+        <path d="M165 151c-10 5-17 18-21 33m105-33c10 5 17 18 21 33" fill="none" stroke="#f79a78" strokeLinecap="round" strokeWidth="5" opacity=".8" />
+      </g>
+      <g className="developer-laptop-screen">
+        <path d="m135 166 139 0 20 95H116z" fill="#ded4cb" stroke="#faf6f1" strokeWidth="5" strokeLinejoin="round" />
+        <path d="m143 174 124 0 16 78H127z" fill="url(#developer-screen)" />
+        <circle cx="205" cy="169" r="1.8" fill="#786f8d" />
+        <path d="M147 184h31m-31 9h52m-52 9h39m-39 9h61m-61 9h32m-32 9h48" fill="none" stroke="#bd9be6" strokeLinecap="round" strokeWidth="3" opacity=".9" />
+        <path d="M185 184h36m-10 9h36m-27 9h32m-19 9h28m-45 9h39" fill="none" stroke="#f58a70" strokeLinecap="round" strokeWidth="2.5" opacity=".8" />
+        <path d="m116 261 178 0 22 17c2 2 0 5-4 5H99c-4 0-6-3-3-5z" fill="url(#developer-laptop)" stroke="#c9beb4" strokeWidth="2" />
+        <path d="M184 265h42l5 5h-52z" fill="#b5a99e" opacity=".8" />
+      </g>
+      <g className="developer-hands" fill="#e8ad8d">
+        <path d="M167 239c5-5 11-4 16 0l9 11c3 4 2 9-2 11-4 2-8 0-11-3l-12-11c-3-2-3-5 0-8z" />
+        <path d="M244 238c-5-5-11-4-16 0l-9 11c-3 4-2 9 2 11 4 2 8 0 11-3l12-11c3-2 3-5 0-8z" />
+      </g>
+      <circle className="developer-cursor" cx="254" cy="185" r="3" fill="#f5c96a" />
+    </svg>
+  )
+}
+
 function App() {
   const [isLoading, setIsLoading] = useState(true)
 
@@ -73,7 +130,7 @@ function App() {
       <div className={`page-loader ${isLoading ? 'is-loading' : ''}`} aria-hidden="true"><DancingLetters text="NANDA" autoPlay autoPlayInterval={900} className="loader-dancing-letters" letterClassName="loader-dancing-letter" /><small>loading experience</small></div>
       <div className="custom-cursor" aria-hidden="true" />
       <nav className="nav container" aria-label="Primary navigation"><a className="brand" href="#top" aria-label="Nanda home"><span>N</span>anda.</a><div className="nav-links"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a></div><a className="nav-status" href={whatsappLink} target="_blank" rel="noreferrer"><i /> Start a project</a></nav>
-      <section className="hero-section container" id="top"><div className="hero-copy"><p className="eyebrow"><span>01</span> Full-Stack Developer · Indonesia</p><h1>Ideas,<br /><em>made real.</em></h1><p className="hero-intro">Thoughtful websites for founders, small businesses, and ideas ready to grow. I bring considered design and full-stack development together to create clear, useful digital experiences.</p><div className="hero-actions"><a className="button button-dark" href={whatsappLink} target="_blank" rel="noreferrer">Let’s discuss your website <ArrowIcon /></a><a className="text-link" href="#work">See selected work <span>↓</span></a></div></div><div className="hero-scene" aria-label="Abstract 3D design object"><div className="scene-glow" /><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="photo-overlay"><img src={profileImg} alt="Portrait of Nanda" /><span>code<br /><strong>in progress</strong></span></div><div className="cube-wrap"><img src={heroImg} alt="Abstract 3D layered cube" /></div><div className="scene-label label-top">web<br /><strong>in motion</strong></div><div className="scene-label label-bottom">scroll to<br /><strong>explore ↓</strong></div><span className="scene-dot dot-one" /><span className="scene-dot dot-two" /></div><div className="hero-footer"><span>Based in Indonesia · Working worldwide</span><span>Scroll to explore <b>↓</b></span><span>© 2026</span></div></section>
+      <section className="hero-section container" id="top"><div className="hero-copy"><p className="eyebrow"><span>01</span> Full-Stack Developer · Indonesia</p><h1>Ideas,<br /><em>made real.</em></h1><p className="hero-intro">Thoughtful websites for founders, small businesses, and ideas ready to grow. I bring considered design and full-stack development together to create clear, useful digital experiences.</p><div className="hero-actions"><a className="button button-dark" href={whatsappLink} target="_blank" rel="noreferrer">Let’s discuss your website <ArrowIcon /></a><a className="text-link" href="#work">See selected work <span>↓</span></a></div></div><div className="hero-scene" aria-label="Illustration of a developer at work"><div className="scene-glow" /><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="developer-illustration"><DeveloperIllustration /></div><div className="photo-overlay"><img src={profileImg} alt="Portrait of Nanda" /><span>code<br /><strong>in progress</strong></span></div><div className="scene-label label-top">web<br /><strong>in motion</strong></div><div className="scene-label label-bottom">scroll to<br /><strong>explore ↓</strong></div><span className="scene-dot dot-one" /><span className="scene-dot dot-two" /></div><div className="hero-footer"><span>Based in Indonesia · Working worldwide</span><span>Scroll to explore <b>↓</b></span><span>© 2026</span></div></section>
       <div className="marquee" aria-hidden="true"><div>FULL-STACK DEVELOPMENT <span>✦</span> FRONTEND & BACKEND <span>✦</span> DIGITAL EXPERIENCES <span>✦</span> FULL-STACK DEVELOPMENT <span>✦</span></div></div>
       <section className="statement container" data-reveal><p className="section-kicker">/ Websites with a purpose</p><h2>Your next idea,<br /><span>built to <em>work.</em></span></h2><p className="statement-note">Clear message. Useful experience. Thoughtful development.</p></section>
       <section className="services-section container" id="services" data-reveal><div className="section-heading"><div><p className="section-kicker">/ How I can help</p><h2>A website for<br /><em>what’s next.</em></h2></div><p className="heading-side">Start with the goal. I’ll help shape the right web experience around your business and your customers.</p></div><div className="service-grid"><article className="service-item"><span>01 / GET DISCOVERED</span><h3>Business<br /><em>website</em></h3><p>Introduce your business clearly, showcase what you offer, and make it easy for customers to reach you.</p></article><article className="service-item"><span>02 / LAUNCH AN IDEA</span><h3>Landing<br /><em>page</em></h3><p>Focus attention on one offer, campaign, or launch with a clear message and a direct next step.</p></article><article className="service-item"><span>03 / BUILD A TOOL</span><h3>Custom web<br /><em>experience</em></h3><p>Bring a more interactive idea to life with a tailored interface and the functionality it needs.</p></article></div><a className="service-cta" href={whatsappLink} target="_blank" rel="noreferrer">Not sure what you need? Tell me about your idea <ArrowIcon /></a></section>
